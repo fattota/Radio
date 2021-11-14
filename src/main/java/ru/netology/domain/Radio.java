@@ -79,4 +79,14 @@ public class Radio {
     public int getNumberOfStations() {
         return numberOfStations;
     }
+    public void setNumberOfStations (int numberOfStations){
+        if (numberOfStations < 0){
+            return;
+        }
+        if (numberOfStations >10){
+            return;
+        }
+        this.numberOfStations = numberOfStations;
+
+    }
 }

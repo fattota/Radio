@@ -233,6 +233,33 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldCheckNumberOfStationWithinTheLimit() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfStations(4);
+        int expected = 4;
+        int actual = radio.getNumberOfStations();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCheckNumberOfStationOverTheLimit() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfStations(20);
+        int expected = 10;
+        int actual = radio.getNumberOfStations();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCheckNumberOfStationUnderTheLimit() {
+        Radio radio = new Radio(10);
+        radio.setNumberOfStations(-2);
+        int expected = 10;
+        int actual = radio.getNumberOfStations();
+        assertEquals(expected, actual);
+    }
+
 }
 
 
